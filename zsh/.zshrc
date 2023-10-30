@@ -70,3 +70,4 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Cursor theme
 export XCURSOR_THEME=bibata-cursor-theme
+
