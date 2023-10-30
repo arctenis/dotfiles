@@ -1,0 +1,7 @@
+mkdir -p "$HOME/.config/nvim"
+mkdir -p "$HOME/.config/nvim/undo"
+ln -sf "$HOME/Dotfiles/nvim/init.vim" "$HOME/.config/nvim"
+rm -rf "$HOME/.config/nvim/bundle"
+ln -s "$HOME/Dotfiles/nvim/bundle" "$HOME/.config/nvim"
+rm -rf "$HOME/.config/nvim/coc-settings.json"
+ln -sf "$HOME/Dotfiles/nvim/coc-settings.json" "$HOME/.config/nvim"

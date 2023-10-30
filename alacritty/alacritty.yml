@@ -1,0 +1,18 @@
+font:
+  normal:
+    family: IosevkaTerm Nerd Font Mono
+    style: Regular
+  bold:
+    style: Bold
+  italic:
+    style: Italic
+  size: 9.5
+
+shell:
+  program: /usr/bin/zsh
+
+window:
+  padding:
+    x: 20
+    y: 20
+
