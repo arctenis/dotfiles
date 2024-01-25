@@ -71,7 +71,4 @@ export PATH=$PATH:/usr/local/go/bin
 # Cursor theme
 export XCURSOR_THEME=bibata-cursor-theme
 
-# OpenAI
-export OPENAI_API_KEY="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"
-
 # export MESA_GL_VERSION_OVERRIDE=3.3
