@@ -72,6 +72,7 @@ set cmdheight=2
 set nobackup
 set nowritebackup
 set updatetime=300
+set foldmethod=indent
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -89,15 +90,6 @@ if (empty($TMUX))
   " endif
 endif
 
-" Use <c-space> to trigger copilot completion.
-" if has('nvim')
-  " inoremap <silent><expr> <c-space> coc#refresh()
-" else
-  " inoremap <silent><expr> <c-@> coc#refresh()
-" endif
-
-" In Visual mode, use space to deselect.
-vmap <silent> <space> <esc>
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -113,6 +105,16 @@ colorscheme wal
 "    +---------+
 "    | Mapping |
 "    +---------+
+
+" Use <c-space> to trigger copilot completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" In Visual mode, use space to deselect.
+vmap <silent> <space> <esc>
 
 " Add timestamp
 nmap <F5> !!date "+\%Y/\%m/\%d-\%H:\%M"<C-R><Esc>
@@ -140,10 +142,10 @@ vmap < <gv
 vmap > >gv
 
 " arrow keys resize windows
-nnoremap <left> :vertical resize -10<cr>
-nnoremap <right> :vertical resize +10<cr>
-nnoremap <up> :resize -10<cr>
-nnoremap <down> :resize +10<cr>
+nnoremap <left> :vertical resize -1<cr>
+nnoremap <right> :vertical resize +1<cr>
+nnoremap <up> :resize -1<cr>
+nnoremap <down> :resize +1<cr>
 
 " marks
 nmap è `
@@ -265,8 +267,12 @@ require("nvim-autopairs").setup()
 EOF
 
 " ---- copilot settings ---- "
-" imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
+" Disable copilot at startup "
+
+" let g:copilot_enabled = v:false
 
 " ---- nvim-tree settings ---- "
 lua << EOF

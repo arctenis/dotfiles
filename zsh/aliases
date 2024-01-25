@@ -1,6 +1,6 @@
 # Pywal themes
 
-alias gruvbox="wal --theme gruvbox-dark"
+alias gruvbox="wal --theme gruvbox-alt"
 alias nord="wal --theme base16-nord"
 alias city="wal -i ~/Images/wallpapers/city07.jpg"
 alias gray="wal --theme gray"

@@ -6,7 +6,7 @@ font:
     style: Bold
   italic:
     style: Italic
-  size: 9.5
+  size: 14.0
 
 shell:
   program: /usr/bin/zsh
