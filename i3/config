@@ -15,6 +15,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Hack Nerd Font 8
+# font pango:IosevkaTerm Nerd Font 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -245,11 +246,11 @@ set_from_resource $color15    color15
 
 # Theme colors
 # class                 border   backgr.   text        indic.     child_border
-client.focused          $color0  $color4   $color0     $color3    $color4
-client.focused_inactive $color0  $color0   $color4     $color3    $color0
-client.unfocused        $color0  $color0   $color4     $color3    $color0
-client.urgent           $color1  $color1   $color0     $color3    $color0
-client.placeholder      $color1  $color3   $color0     $color3    $color0
+client.focused          $color0  $color4   $color0     $color4    $color3
+client.focused_inactive $color0  $color0   $color4     $color4    $color0
+client.unfocused        $color0  $color0   $color4     $color4    $color0
+client.urgent           $color1  $color1   $color0     $color4    $color0
+client.placeholder      $color1  $color4   $color0     $color4    $color0
 client.background       $color0  $color0   $color1     $color0    $color1
 
 # Start i3bar to display a workspace bar (plus the system information i3status

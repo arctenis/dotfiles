@@ -68,12 +68,11 @@ set softtabstop=4
 set shiftwidth=4
 set smartcase
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 set nobackup
 set nowritebackup
 set updatetime=300
-set foldmethod=indent
-
+set signcolumn=no
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -268,11 +267,12 @@ EOF
 
 " ---- copilot settings ---- "
 imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
+
 let g:copilot_no_tab_map = v:true
 
 " Disable copilot at startup "
 
-" let g:copilot_enabled = v:false
+let g:copilot_enabled = v:false
 
 " ---- nvim-tree settings ---- "
 lua << EOF

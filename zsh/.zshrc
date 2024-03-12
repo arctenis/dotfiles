@@ -72,3 +72,7 @@ export PATH=$PATH:/usr/local/go/bin
 export XCURSOR_THEME=bibata-cursor-theme
 
 # export MESA_GL_VERSION_OVERRIDE=3.3
+
+# Zoxide
+eval "$(zoxide init zsh)"
+

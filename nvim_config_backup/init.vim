@@ -1,0 +1,1 @@
+/home/antharia/Dotfiles/nvim/init.vim
