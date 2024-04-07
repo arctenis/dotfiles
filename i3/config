@@ -14,8 +14,9 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Hack Nerd Font 8
-# font pango:IosevkaTerm Nerd Font 8
+#font pango:Hack Nerd Font 8
+font pango:Terminess Nerd Font 9
+#font pango:IosevkaTerm Nerd Font 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -45,6 +46,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+# Cursor theme
+exec --no-startup-id xsetroot -cursor_name Simp1e-Gruvbox-Dark
 
     ###########
     # WINDOWS #
@@ -289,7 +293,7 @@ for_window [class="(?i)reaper"] floating enable
 for_window [class="(?i)arandr"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable
 for_window [class="(?i)Cadence"] floating enable center
-for_window [class="(?i)Nitrogen"] floating enable
+# for_window [class="(?i)Nitrogen"] floating enable
 for_window [class="(?i)carla"] floating enable
 for_window [class="(?i)simplescreenrecorder"] floating enable
 

@@ -6,7 +6,6 @@ alias noir="wal --theme black"
 alias dracula="wal --theme base16-dracula"
 alias malkuth="wal --theme malkuth"
 alias gotham="wal --theme sexy-gotham"
-alias spaceship="wal -i ~/Images/wallpapers/spaceship01.jpg --backend colorz"
 
 # Apps
 alias vim="nvim"

@@ -272,7 +272,7 @@ let g:copilot_no_tab_map = v:true
 
 " Disable copilot at startup "
 
-let g:copilot_enabled = v:false
+" let g:copilot_enabled = v:false
 
 " ---- nvim-tree settings ---- "
 lua << EOF
@@ -315,7 +315,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
