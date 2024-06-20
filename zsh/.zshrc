@@ -1,3 +1,5 @@
+USE_POWERLINE="true"
+
 fpath=($ZDOTDIR/external $fpath)
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
@@ -55,24 +57,17 @@ source ~/.cache/wal/colors-tty.sh
 # Needed for pywal
 export PATH="/home/antharia/.local/bin:$PATH"
 
-# Go installation
-export PATH=$PATH:/usr/local/go/bin
-
 # Charm
 export CHARM_HOST=localhost
-
-# VST
-export VST3_PATH="$VST3_PATH:/usr/lib64/vst3:/home/antharia/.wine/drive_c/Program Files/Common Files/VST3:/home/antharia/.vst3/yabridge"
 
 # Golang
 export GOPATH=$HOME/.config/go
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.go/bin
+export PATH=$PATH:$HOME/.config/go/bin
 
 # Cursor theme
 export XCURSOR_THEME=bibata-cursor-theme
 
-# export MESA_GL_VERSION_OVERRIDE=3.3
-
-# Zoxide
-eval "$(zoxide init zsh)"
-
+# Browser
+export BROWSER="/usr/bin/google-chrome-stable"

@@ -27,10 +27,10 @@ alias ls="lsd"
 alias reload="systemctl reload"
 alias restart="systemctl restart"
 alias selfie="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed --vo=tct"
-alias shsh="systemctl suspend"
 alias start="systemctl start"
 alias stop="systemctl stop"
 alias wifi="nmcli device wifi"
 alias yt="mpv --ytdl-format=22"
+alias title='function _title(){ echo -e "\e]0;$1\a"; };_title'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 

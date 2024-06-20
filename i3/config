@@ -14,8 +14,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:Hack Nerd Font 8
-font pango:Terminess Nerd Font 9
+font pango:Hack Nerd Font 8
+#font pango:Terminess Nerd Font 9
 #font pango:IosevkaTerm Nerd Font 8
 
 # Start XDG autostart .desktop files using dex. See also
@@ -74,6 +74,7 @@ bindsym $mod+Shift+p border pixel 2
 # bindsym $mod+Return exec sakura
 # bindsym $mod+Return exec termite
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty floating enable
 
 # kill focused window
 bindsym $mod+q kill

@@ -28,6 +28,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'nvim-neorg/neorg' | Plug 'nvim-lua/plenary.nvim'
 " Plug 'lervag/vimtex'
 Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+
 call plug#end()
 
 set nocompatible
@@ -107,7 +108,7 @@ colorscheme wal
 
 " Use <c-space> to trigger copilot completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <Tab> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
@@ -186,21 +187,17 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use <c-space> to trigger completion.
+" Use <Tab> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <TAB> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -271,8 +268,7 @@ imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 " Disable copilot at startup "
-
-" let g:copilot_enabled = v:false
+"let g:copilot_enabled = v:false"
 
 " ---- nvim-tree settings ---- "
 lua << EOF
@@ -289,6 +285,21 @@ require("nvim-tree").setup()
 EOF
 
 nmap <leader>n :NvimTreeToggle<CR>
+
+" --- Ruff ---- "
+lua << END
+-- Configure `ruff-lsp`.
+-- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
+-- For the default config, along with instructions on how to customize the settings
+require('lspconfig').ruff_lsp.setup {
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+}
+END
 
 " ---- lualine ---- "
 lua << END
